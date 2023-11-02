@@ -1,0 +1,24 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation project(':common:common-domain')
+    implementation project(':common:common-application')
+    implementation project(':cart-domain:cart-domain-core')
+    implementation project(':cart-domain:cart-domain-application')
+    implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+}
+
+test {
+    useJUnitPlatform()
+}

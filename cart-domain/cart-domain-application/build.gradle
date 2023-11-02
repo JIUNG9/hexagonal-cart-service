@@ -1,0 +1,28 @@
+plugins {
+
+}
+
+group 'com.bit.lotte.fresh.cart.domain.application'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'io.lettuce:lettuce-core:6.1.6.RELEASE'
+    implementation libs.spring.redis
+    implementation(libs.java.validation)
+    implementation(libs.sl4j)
+    implementation project(':common:common-domain')
+    implementation project(':common:common-application')
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation project(':cart-domain:cart-domain-core')
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+}
+
+test {
+    useJUnitPlatform()
+}

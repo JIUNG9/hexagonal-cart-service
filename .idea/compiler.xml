@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Gradle Imported" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.30/b5a4b6d16ab13e34a88fae84c35cd5d68cac922c/slf4j-api-1.7.30.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.30/f195ee86e6c896ea47a1d39defbe20eb59cd149d/lombok-1.18.30.jar" />
+        </processorPath>
+        <module name="cart-service.cart-domain.cart-domain-core.main" />
+        <module name="cart-service.cart-message.main" />
+        <module name="cart-service.cart-container.main" />
+        <module name="cart-service.common.main" />
+        <module name="cart-service.cart-domain.cart-domain-application.main" />
+        <module name="cart-service.main" />
+        <module name="cart-service.cart-domain.main" />
+        <module name="cart-service.common.common-domain.main" />
+        <module name="cart-service.cart-dataaccess.main" />
+        <module name="cart-service.common.common-application.main" />
+        <module name="cart-service.cart-application.main" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="11" />
+  </component>
+</project>

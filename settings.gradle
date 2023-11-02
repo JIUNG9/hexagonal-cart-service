@@ -1,0 +1,27 @@
+
+enableFeaturePreview("VERSION_CATALOGS")
+dependencyResolutionManagement {
+    versionCatalogs {
+        libs {
+            '../gradle/libs.versions.toml'
+        }
+    }
+}
+
+rootProject.name = 'cart-service'
+include 'cart-application'
+include 'cart-domain'
+include 'cart-domain:cart-domain-core'
+findProject(':cart-domain:cart-domain-core')?.name = 'cart-domain-core'
+include 'cart-domain:cart-domain-application'
+findProject(':cart-domain:cart-domain-application')?.name = 'cart-domain-application'
+include 'cart-dataaccess'
+include 'cart-message'
+include 'cart-container'
+include 'common'
+include 'common:common-domain'
+findProject(':common:common-domain')?.name = 'common-domain'
+include 'common:common-application'
+findProject(':common:common-application')?.name = 'common-application'
+
+

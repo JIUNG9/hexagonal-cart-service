@@ -1,0 +1,49 @@
+import org.springframework.boot.gradle.plugin.SpringBootPlugin
+
+plugins {
+    id 'org.springframework.boot' version '2.7.16' apply false
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE' apply false
+    id 'java'
+}
+
+
+group 'com.bit.lotte.fresh.cart'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+allprojects {
+    plugins.apply('org.springframework.boot')
+    plugins.apply('io.spring.dependency-management')
+    plugins.apply('java')
+
+    repositories {
+        mavenCentral()
+    }
+    ext {
+        set('springCloudVersion', "2021.0.3")
+    }
+
+    dependencies {
+        implementation(libs.json)
+        annotationProcessor(libs.sl4j)
+        compileOnly(libs.sl4j)
+        compileOnly(libs.lombok)
+        annotationProcessor(libs.lombok)
+        testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+        testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+
+        dependencyManagement {
+            imports {
+                mavenBom(SpringBootPlugin.BOM_COORDINATES)
+                mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+            }
+        }
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
